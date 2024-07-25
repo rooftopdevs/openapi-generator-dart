@@ -32,16 +32,16 @@ FutureOr<Map<String, dynamic>> loadSpec(
   print('loadSpec - ' + specConfig.path);
   // If the spec file doesn't match any of the currently supported spec formats
   // reject the request.
-  if (!_supportedRegexes
-      .any((fileEnding) => fileEnding.hasMatch(specConfig.path))) {
-    return Future.error(
-      OutputMessage(
-        message: 'Invalid spec file format.',
-        level: Level.SEVERE,
-        stackTrace: StackTrace.current,
-      ),
-    );
-  }
+  // if (!_supportedRegexes
+  //     .any((fileEnding) => fileEnding.hasMatch(specConfig.path))) {
+  //   return Future.error(
+  //     OutputMessage(
+  //       message: 'Invalid spec file format.',
+  //       level: Level.SEVERE,
+  //       stackTrace: StackTrace.current,
+  //     ),
+  //   );
+  // }
 
   if (!(specConfig is RemoteSpec)) {
     final file = File(specConfig.path);
